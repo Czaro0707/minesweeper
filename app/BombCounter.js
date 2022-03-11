@@ -1,5 +1,5 @@
 import { actualCells, startValues, game } from "./Game.js";
-import { gsapAnimation } from "./gsapAnimation.js";
+// import { gsapAnimation } from "./gsapAnimation.js";
 
 class BombCounter {
   constructor(element) {
