@@ -1,0 +1,137 @@
+:root {
+  --minesweeper-width: 650px;
+  --minesweeper-border: 4px;
+  --minesweeper-margin: 20px;
+  --minesweeper-rows: 8;
+  --minesweeper-cols: 8;
+  --minesweeper-font-size: 50px;
+  --cell-width: calc(
+    (
+        (var(--minesweeper-width) - (var(--minesweeper-border) * 4)) -
+          (var(--minesweeper-margin) * 2)
+      ) / var(--minesweeper-cols)
+  );
+}
+
+body {
+  background-color: #c0c0c0;
+}
+
+@mixin concave {
+  border-top: var(--minesweeper-border) solid $cell-concave;
+  border-left: var(--minesweeper-border) solid $cell-concave;
+  border-right: var(--minesweeper-border) solid $cell-convex;
+  border-bottom: var(--minesweeper-border) solid $cell-convex;
+}
+
+@mixin convex {
+  border-top: var(--minesweeper-border) solid $cell-convex;
+  border-left: var(--minesweeper-border) solid $cell-convex;
+  border-right: var(--minesweeper-border) solid $cell-concave;
+  border-bottom: var(--minesweeper-border) solid $cell-concave;
+}
+
+.saper-box {
+  position: relative;
+  width: var(--minesweeper-width);
+  margin: 0 auto;
+  background-color: $bgc-saper;
+  @include convex;
+}
+
+.interface {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  @include concave;
+  &__counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+    background-color: $timer-bgc;
+    color: $timer-color;
+    font-family: $timer-font;
+    font-size: 50px;
+    outline: none;
+  }
+  &__button {
+    flex-basis: 15%;
+    background-color: $cell-center;
+    cursor: pointer;
+    @include convex;
+    &:hover {
+      background-color: darken($cell-center, 15%);
+    }
+    &__face {
+      width: 100%;
+      height: 50px;
+    }
+  }
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--minesweeper-margin);
+  @include concave;
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--minesweeper-font-size);
+    flex-basis: var(--cell-width);
+    height: var(--cell-width);
+    cursor: pointer;
+    @include convex;
+  }
+}
+
+.cellRevealed {
+  border: 1px solid #7b7b7b;
+}
+
+.cellIsBomb {
+  background-image: url("../assets/bomb.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: red;
+  border: 1px solid #7b7b7b;
+}
+
+.first {
+  color: blue;
+}
+
+.second {
+  color: green;
+}
+
+.third {
+  color: red;
+}
+
+.fourth {
+  color: purple;
+}
+
+.fifth {
+  color: black;
+}
+
+.sixth {
+  color: gray;
+}
+
+.seventh {
+  color: maroon;
+}
+
+.eighth {
+  color: turquoise;
+}
+
+.flag {
+  width: 100%;
+}
