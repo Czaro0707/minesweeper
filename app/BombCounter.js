@@ -36,7 +36,7 @@ class BombCounter {
       ) {
         e.target.classList.add("flagCell");
         e.target.appendChild(imgFlag);
-        gsapAnimation.flagAnimation(imgFlag);
+        // gsapAnimation.flagAnimation(imgFlag);
         this.bombAmount--;
       }
 
