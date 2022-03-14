@@ -1,4 +1,4 @@
-import { actualCells, game } from "./Game.js";
+import { actualCells, game } from "./Game.mjs";
 
 class GameFeatures {
   constructor() {}

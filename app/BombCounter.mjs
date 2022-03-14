@@ -1,5 +1,5 @@
-import { actualCells, startValues, game } from "./Game.js";
-// import { gsapAnimation } from "./gsapAnimation.js";
+import { actualCells, startValues, game } from "./Game.mjs";
+import { gsapAnimation } from "./gsapAnimation.mjs";
 
 class BombCounter {
   constructor(element) {
@@ -36,7 +36,7 @@ class BombCounter {
       ) {
         e.target.classList.add("flagCell");
         e.target.appendChild(imgFlag);
-        // gsapAnimation.flagAnimation(imgFlag);
+        gsapAnimation.flagAnimation(imgFlag);
         this.bombAmount--;
       }
 

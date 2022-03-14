@@ -1,10 +1,8 @@
-import Cell from "./Cell.js";
-import { timerCounter } from "./TimerCounter.js";
-import { bombCounter } from "./BombCounter.js";
-import { gameFeatures } from "./GameFeatures.js";
-// import {
-//   gsapAnimation
-// } from "./gsapAnimation.js";
+import Cell from "./Cell.mjs";
+import { timerCounter } from "./TimerCounter.mjs";
+import { bombCounter } from "./BombCounter.mjs";
+import { gameFeatures } from "./GameFeatures.mjs";
+import { gsapAnimation } from "./gsapAnimation.mjs";
 gameFeatures;
 
 export const GAME = document.querySelector(".game");
@@ -151,7 +149,7 @@ export default class Game {
       }
     });
     this.isEndGame = true;
-    // gsapAnimation.faceEnd();
+    gsapAnimation.faceEnd();
     actualCells = [];
     timerCounter.stopTimerCounter();
   }
@@ -202,7 +200,7 @@ export default class Game {
     );
     bombCounter.bombAmount = startValues.numberOfFlags;
     game.init();
-    // gsapAnimation.faceStart();
+    gsapAnimation.faceStart();
     gameFeatures.init();
     bombCounter.init();
     timerCounter.stopTimerCounter();

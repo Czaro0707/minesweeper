@@ -1,4 +1,4 @@
-import { actualCells, checkCells, game } from "./Game.js";
+import { actualCells, checkCells, game } from "./Game.mjs";
 
 const cellsAfterFilter = [];
 
