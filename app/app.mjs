@@ -16,3 +16,5 @@ timerCounter.startTimerCounter();
 bombCounter.init();
 
 gameFeatures.init();
+
+console.log("start");
